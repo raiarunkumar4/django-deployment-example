@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a class="navbar-brand" href="#">BRAND</a></li>
+          <li><a class="navbar-link" href="#">ADMIN</a></li>
+          <li><a class="navbar-link" href="#">OTHER</a></li>
+
+        </ul>
+
+      </div>
+
+    </nav> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'index' %}">BRAND</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="{% url 'admin:index' %}">ADMIN <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'basic_app:other' %}">OTHER</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      {% block body_block %}
+      <!-- Anything outside this will be inherited if you extend! -->
+      {% endblock %}
+    </div>
+
+  </body>
+</html>
